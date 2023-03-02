@@ -4,19 +4,24 @@ import java.util.Scanner;
 
 public class Ordlista {
 
+    //lista för ordlistan
     ArrayList<String> ordlista = new ArrayList<>();
 
 
+    //metod för att slumpa ord ur ordlistan
     public String slumpaOrd() {
         Random random = new Random();
         int index = random.nextInt(ordlista.size());
         return ordlista.get(index);
     }
 
+    //metod för att lägga till ord i ordlistan,  i början av spelet
+    //utan att spelaren ska behöva se det.
     public void läggTillOrd(String ord) {
         ordlista.add(ord);
     }
 
+    //överlagrad-metod för att användaren ska kunna lägga till ord i spelet
     public void läggTillOrd() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Vilket ord vill du lägga till?");
@@ -29,6 +34,7 @@ public class Ordlista {
             System.out.println("Ordet finns redan");
         }
     }
+    //metod för att ta bort ord
     public void taBortOrd() {
         Scanner scanner = new Scanner(System.in);
         for (String ord : ordlista) {

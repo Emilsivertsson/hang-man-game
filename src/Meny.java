@@ -1,6 +1,7 @@
-import java.util.Scanner;
+
 
 public class Meny {
+    // metod för huvudmenyn
     public void visaHuvudmenyn(){
         System.out.println("----Hänga gubben----");
         System.out.println("1. Byta namn på spelaren");
