@@ -22,7 +22,7 @@ public class Spelet {
         ordlista.läggTillOrd("peka");
         ordlista.läggTillOrd("blod");
         ordlista.läggTillOrd("tv");
-        ordlista.läggTillOrd("flaska");
+        ordlista.läggTillOrd("ko");
         ordlista.läggTillOrd("vas");
         ordlista.läggTillOrd("keps");
 
@@ -43,6 +43,9 @@ public class Spelet {
                     gissa();
                 case 5:
                     avslutaSpelet();
+                    break;
+                default:
+                    System.out.println("Det valet finns inte!");
                     break;
             }
         }
@@ -71,7 +74,6 @@ public class Spelet {
                 System.out.println("Du har tidigare gissar på bokstäverna : ");
                 for (int i = 0; i <gissadeBokstäver.size() ; i++) {
                     System.out.print(gissadeBokstäver.get(i) +",");
-
                 }
                 System.out.println();
             }
@@ -91,7 +93,7 @@ public class Spelet {
                     System.out.println("Nu var dina gissningar slut");
                     avslutaSpelet();
                 }
-                if (ord.slumpadeOrdet.equals(ord.gissadeOrdet)){
+                else if (ord.slumpadeOrdet.equals(ord.gissadeOrdet)){
                    vinnare();
                 }
             }
