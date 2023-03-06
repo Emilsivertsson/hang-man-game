@@ -25,6 +25,7 @@ public class Ord {
     //getter för att hämta det slumpade ordet, här skapas också de stjärnor som döljer de ord man gissar på.
     public void setOrd(String ord) {
         this.ord = ord;
+        gissadeOrdet = "";
         blanks = new String[ord.length()];
         for (int i = 0; i < ord.length(); i++) {
             setBlanks("*", i);
@@ -39,8 +40,10 @@ public class Ord {
         //kolla om listan innehåller gissningen
         if (separeradeBokstäver.contains(bokstav)) {
             System.out.println("Den bokstaven finns i ordet!");
+
             int index = separeradeBokstäver.indexOf(bokstav);//om den gör det, ta index på den bokstaven från det slumpade ordet,
             blanks[index] = bokstav; // och sätt in gissningen på rätt index i blanks
+
             System.out.println();
             slumpadeOrdet = String.join("", separeradeBokstäver);// gör om listan till en string variable
             gissadeOrdet = String.join("", blanks); //gör samma med blanks arrayen

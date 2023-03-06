@@ -2,7 +2,10 @@ public class Spelare {
 
     //initiera variabler
     private String namn;
-    private int poäng;
+    int poäng;
+
+
+
 
     //konstruktor
     public Spelare(String namn, int poäng) {
@@ -17,6 +20,14 @@ public class Spelare {
 
     public void setNamn(String namn) {
         this.namn = namn;
+    }
+
+    public int getPoäng() {
+        return poäng;
+    }
+
+    public void ökapoäng(){
+        poäng++;
     }
 
 }
