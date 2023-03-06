@@ -30,28 +30,32 @@ public class Spelet {
 
         while(true){
             meny.visaHuvudmenyn(); //skriv ut huvudmenyn
-            int menuChoice = scanner.nextInt();
-            switch (menuChoice){
-                case 1:
-                    bytName();
-                    break;
-                case 2:
-                    ordlista.läggTillOrd();
-                    break;
-                case 3:
-                    ordlista.taBortOrd();
-                    break;
-                case 4:
-                    gissa();
-                case 5:
-                    avslutaSpelet();
-                    break;
-                default:
-                    System.out.println("Det valet finns inte!");
-                    break;
-            }
+            Switchmenu(scanner);
         }
 
+    }
+
+    private void Switchmenu(Scanner scanner) {
+        int menuChoice = scanner.nextInt();
+        switch (menuChoice){
+            case 1:
+                bytName();
+                break;
+            case 2:
+                ordlista.läggTillOrd();
+                break;
+            case 3:
+                ordlista.taBortOrd();
+                break;
+            case 4:
+                gissa();
+            case 5:
+                avslutaSpelet();
+                break;
+            default:
+                System.out.println("Det valet finns inte!");
+                break;
+        }
     }
 
     //Metod för att byta namn på spelaren
@@ -69,6 +73,10 @@ public class Spelet {
         ord.setOrd(ordlista.slumpaOrd()); //här hämtas det slumpade ordet.
 
         while(true){
+            if (spelare.getNamn().equals("Player")){
+                System.out.println("borde du inte byta namn på din spelare?");
+                bytName();
+            }
             System.out.println("Ordet har " + ord.getOrd().length() + " bokstäver i sig");
             for (int i = 0; i < ord.blanks.length; i++) {   //skriv ut blanks
                 System.out.print(ord.blanks[i]);
