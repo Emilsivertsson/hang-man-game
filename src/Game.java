@@ -19,7 +19,7 @@ public class Game {
     //metoden som driver själva spelet.
     public void startGame() {
         Scanner scanner = new Scanner(System.in);
-        nrOfGuesses = 0;
+        nrOfGuesses = 10;
         guessedLetters.clear();
         wordlist.addWord("dator");
         wordlist.addWord("ost");
@@ -34,7 +34,6 @@ public class Game {
             menu.showMainmenu(); //skriv ut huvudmenyn
             Switchmenu(scanner);
         }
-
     }
 
     private void Switchmenu(Scanner scanner) {
@@ -98,18 +97,18 @@ public class Game {
             System.out.println("Vilken bokstav vill du gissa på?");     //ta emot gissning och kolla om det redan gissats på.
             String guess = scanner.nextLine();
             guess = guess.toLowerCase();
+            nrOfGuesses--;
             if ((guessedLetters.contains(guess))) {
                 System.out.println("Det har du redan gissat på");
             } else {
                 ord.checkTheLetter(ord.getWord(), guess);          //skicka det vidare om det inte redan gissats på.
                 guessedLetters.add(guess);
-                nrOfGuesses--;
 
                 if (nrOfGuesses == 0) {              //om gissningarna (10 st) tar slut innan spelaren klarar det.
                     System.out.println("-----------------------------");
                     System.out.println("Nu var dina gissningar slut");
                     playAgain();
-                } else if (ord.randomword.equals(ord.guessedword)) {  //om spelaren klarar det
+                } else if (ord.getWord().equals(ord.guessedword)) {  //om spelaren klarar det
                     winner();
                 }
             }
