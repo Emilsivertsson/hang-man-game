@@ -45,7 +45,7 @@ public class Word {
             blanks[index] = letter; // och sätt in gissningen på rätt index i blanks
 
             System.out.println();
-            randomword = String.join("", separatedLetters);// gör om listan till en string variable
+            randomword =String.join("", separatedLetters);// gör om listan till en string variable
             guessedword = String.join("", blanks); //gör samma med blanks arrayen
         } else {
             System.out.println("Den bokstaven finns inte i ordet!");
