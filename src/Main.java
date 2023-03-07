@@ -1,11 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         //initiera spelet, spelaren och ordlistan
-        Spelare spelare = new Spelare("player",0);
-        Ordlista ordlista = new Ordlista();
-        Spelet spelet = new Spelet();
+        Player player = new Player("okände spelare",0);
+        Wordlist wordlist = new Wordlist();
+        Game game = new Game();
         // kalla på menyn
-        spelet.startaSpelet();
+        game.startGame();
+
 
 
     }

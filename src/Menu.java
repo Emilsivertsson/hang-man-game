@@ -1,8 +1,8 @@
 
 
-public class Meny {
+public class Menu {
     // metod för huvudmenyn
-    public void visaHuvudmenyn(){
+    public void showMainmenu(){
         System.out.println("----Hänga gubben----");
         System.out.println("1. Byta namn på spelaren");
         System.out.println("2. Lägg till ord i ordlistan");
